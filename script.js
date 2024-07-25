@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const chatBox = document.getElementById("chatBox");
+    const scrollToLastBtn = document.getElementById("scrollToLastBtn");
 
     fetch('chat.txt')
         .then(response => response.text())
@@ -40,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentMessage) {
                 appendMessage(currentMessage, currentSender, currentTime);
             }
+
+            scrollToLastBtn.style.display = 'block';
         });
 
     function appendMessage(text, sender, time) {
@@ -58,4 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         messageElement.appendChild(timeElement);
         chatBox.appendChild(messageElement);
     }
+
+    scrollToLastBtn.addEventListener('click', function () {
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
 });
