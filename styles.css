@@ -20,10 +20,11 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .chat-box {
-    max-height: 99vh;
+    max-height: 80vh;
     overflow-y: auto;
 }
 
@@ -44,7 +45,7 @@ body {
 .message .text {
     max-width: 80%;
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 8px;
     margin-bottom: 5px;
     position: relative;
     word-wrap: break-word;
@@ -72,16 +73,20 @@ body {
     margin: 20px 0;
     font-weight: bold;
     color: #999;
-    background: #ffffff05;
-    border-radius: 100px;
 }
 
 #scrollToLastBtn {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    border-radius: 100px;
-    display: none;
+    display: none; /* Hidden by default */
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 @media (max-width: 600px) {

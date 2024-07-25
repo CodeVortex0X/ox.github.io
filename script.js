@@ -51,7 +51,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const textElement = document.createElement('div');
         textElement.classList.add('text');
-        textElement.textContent = text;
+
+        if (text.includes('(file attached)')) {
+            const fileName = text.split(' ')[0];
+            const fileExtension = fileName.split('.').pop();
+
+            if (fileExtension === 'jpg' || fileExtension === 'png' || fileExtension === 'gif') {
+                const imgElement = document.createElement('img');
+                imgElement.src = `assets/${fileName}`;
+                imgElement.alt = fileName;
+                imgElement.classList.add('img-fluid');
+                textElement.appendChild(imgElement);
+            } else if (fileExtension === 'mp4' || fileExtension === 'webm') {
+                const videoElement = document.createElement('video');
+                videoElement.src = `assets/${fileName}`;
+                videoElement.controls = true;
+                videoElement.classList.add('img-fluid');
+                textElement.appendChild(videoElement);
+            } else {
+                textElement.textContent = text;
+            }
+        } else {
+            textElement.textContent = text;
+        }
 
         const timeElement = document.createElement('div');
         timeElement.classList.add('time');
