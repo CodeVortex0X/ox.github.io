@@ -76,6 +76,14 @@ body {
     border-radius: 100px;
 }
 
+#scrollToLastBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 100px;
+    display: none;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 10px;
