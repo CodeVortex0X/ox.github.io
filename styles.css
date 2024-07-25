@@ -1,3 +1,6 @@
+::-webkit-scrollbar{
+    display: none;
+}
 body {
     background-color: #121212;
     color: #e0e0e0;
@@ -20,7 +23,7 @@ body {
 }
 
 .chat-box {
-    max-height: 80vh;
+    max-height: 99vh;
     overflow-y: auto;
 }
 
@@ -41,7 +44,7 @@ body {
 .message .text {
     max-width: 80%;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 800px;
     margin-bottom: 5px;
     position: relative;
     word-wrap: break-word;
